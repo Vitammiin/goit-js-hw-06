@@ -7,28 +7,32 @@ const ingredients = [
   'Condiments',
 ];
 
+// Напиши скрипт, який для кожного елемента масиву ingredients:
 
-// Находим элемент ul#ingredients
-const ulIngredients = document.getElementById('ingredients');
+// Створить окремий елемент <li>.
+// Обов'язково використовуй метод document.createElement().
+
+// Додасть назву інгредієнта як його текстовий вміст.
+
+// Додасть елементу клас item.
+
+// ul
+const listUl = document.querySelector("#ingredients");
 
 
-// Создаем фрагмент (DocumentFragment) для оптимизации добавления элементов
-
-const fragment = document.createDocumentFragment();
-
-// Используем цикл для создания и добавления каждого <li> элемента в фрагмент
-
-ingredients.forEach((ingredient) =>
-{
-const liElement = document.createElement('li');
-liElement.textContent = ingredient;
-liElement.classList.add('item');
-fragment.appendChild(liElement);
+const listLi = ingredients.map( item => {
+ const liEl = document.createElement("li");
+ liEl.textContent = item ;
+ liEl.classList.add("item")
+ console.log("li");
+ return liEl;
+ 
 });
 
-// Вставляем все <li> элементы одной операцией в список ul#ingredients
 
-ulIngredients.appendChild(fragment);
+listUl.append(...listLi);
+
+console.log(listUl);
 
 
 

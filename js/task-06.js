@@ -1,4 +1,4 @@
-//  делаем инпут красным если кол во символов больше 6 и зеленым нсли меньше.
+
 
 const input = document.getElementById("validation-input");
 
@@ -16,3 +16,5 @@ function validateInput() {
 }
 
 input.addEventListener("blur", validateInput);
+
+

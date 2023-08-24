@@ -13,25 +13,31 @@ const images = [
   },
 ];
 
-// Используй массив объектов images для создания элементов <img> вложенных в <li>.
-//  Для создания разметки используй шаблонные строки и метод insertAdjacentHTML().
 
-// Все элементы галереи должны добавляться в DOM за одну операцию вставки.
-// Добавь минимальное оформление галереи флексбоксами или гридами через CSS классы.
+// Напиши скрипт для створення галереї зображень на 
+// підставі масиву даних. HTML містить список ul.gallery.
 
-const gallery = document.querySelector('.gallery');
-
-// Создаем разметку для каждого изображения в массиве images
-const markup = images.map((image) => {
-  return `
-    <li class="gallery-item">
-      <img src="${image.url}" alt="${image.alt}" class="gallery-img" width="200" >
-    </li>`;
-}).join('');
-
-// Вставляем разметку всех изображений за одну операцию в список ul.gallery
-gallery.insertAdjacentHTML('beforeend', markup);
+const gallery = document.querySelector(".gallery");
 
 
 
+// Використовуй масив об'єктів images для створення елементів 
+// /* <img>, вкладених в <li>. 
 
+const imgList = images.map((imag)=> 
+`
+  <li> <img src="${imag.url}" alt="${imag.alt}" width="200px"> </img> </li>`).join("");
+
+
+
+// Для створення розмітки 
+// використовуй шаблонні рядки і метод insertAdjacentHTML(). 
+
+gallery?.insertAdjacentHTML("beforeend", imgList);
+console.log(gallery);
+
+// Усі елементи галереї повинні додаватися в DOM за одну
+//  операцію додавання.
+
+// Додай мінімальне оформлення галереї флексбоксами 
+// або грідами через CSS класи.

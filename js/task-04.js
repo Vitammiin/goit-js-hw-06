@@ -1,17 +1,40 @@
-// Создай переменную counterValue в которой будет храниться текущее значение счетчика и инициализируй её значением 0.
+// Счетчик состоит из спана и кнопок, которые, при клике,
+//  должны увеличивать и уменьшать его значение на единицу.
 
-const counterValue = 0;
+// <div id="counter">
+//   <button type="button" data-action="decrement">-1</button>
+//   <span id="value">0</span>
+//   <button type="button" data-action="increment">+1</button>
+// </div>
+
+
+
+// Создай переменную counterValue в которой будет храниться
+//  текущее значение счетчика и инициализируй её значением 0.
+let counterValue = 0;
+let value = document.getElementById("value");
 
 // Добавь слушатели кликов на кнопки, внутри которых увеличивай или уменьшай значение счтетчика.
-const plus = document.querySelector(`[data-action="increment"]`);
-const minus = document.querySelector(`[data-action="decrement"]`);
+let increment = document.querySelector("button[data-action='increment']");
+let decrement = document.querySelector("button[data-action='decrement']");
 
-plus.addEventListener(`click`, () => {
-console.log(`Увеличение значения`)
-});
 
-minus.addEventListener(`click`, () => {
-    console.log(`Уменьшение значения`)
-    });
+
+function incr(event){
+    counterValue += 1;
+    value.textContent = counterValue;
+    
+  
+};
+
+function decr(event){
+    counterValue -= 1;
+    value.textContent = counterValue;
+    
+};
+
+increment.addEventListener("click", incr);
+decrement.addEventListener("click", decr);
+
+
 // Обновляй интерфейс новым значением переменной counterValue.
-
