@@ -5,7 +5,7 @@
 // в спане должна отображаться строка "Anonymous".
 const nameInput = document.querySelector("#name-input");
 const nameOutput = document.querySelector("#name-output");
-let anonymous = "Anonymos";
+let anonymous = "Anonymous";
 
 nameOutput.textContent = anonymous;
 
@@ -13,7 +13,6 @@ nameOutput.textContent = anonymous;
 nameInput?.addEventListener("input", OnInput);
 
 function OnInput(event) {
-    nameOutput.textContent = event.target.value || anonymous;
-}
- console.log(nameOutput);
+    nameOutput.textContent = event.target.value.trim() || anonymous;}
+ console.log(nameOutput?.textContent);
  

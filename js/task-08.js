@@ -1,14 +1,20 @@
-// reset - ощищает формы
-const form = document.getElementById("login-form"); 
+const form = document.querySelector(".login-form");
 
-form?.addEventListener("submit", OnSubmit);
+form.addEventListener("submit", OnSubmit);
 
-function OnSubmit(e){
+function OnSubmit(e) {
     e.preventDefault();
-    console.dir(form);
-    console.log(form.elements.email.value);
-    form?.reset()
+    
+    if (form.elements.email.value === "" || form.elements.password.value === "") {
+        alert("All fields must be filled out.");
+    } else {
+        const formData = {
+            email: form.elements.email.value,
+            password: form.elements.password.value
+        };
+        console.log(formData);
+        form.reset();
+    }
 }
-
 
 
